@@ -31,6 +31,31 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Patrones con Vehiculos',
       home: Scaffold(
+        appBar: AppBar(
+          title: Text('Patterns'),
+          actions: [
+            PopupMenuButton(
+                // add icon, by default "3 dot" icon
+                icon: Icon(Icons.settings),
+                itemBuilder: (context) {
+                  return [
+                    PopupMenuItem<int>(
+                      value: 0,
+                      child: Text("Vehicles"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 1,
+                      child: Text("Solar System"),
+                    ),
+                  ];
+                },
+                onSelected: (value) {
+                    setState(() {
+                      configurations.isVehicles = value == 0;
+                    });
+                }),
+          ],
+        ),
         backgroundColor: Colors.white,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,

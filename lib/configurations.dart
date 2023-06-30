@@ -8,6 +8,7 @@ class Configurations {
   late int randomQuantityPatternA;
   late int randomQuantityPatternB;
   late int randomPatternType;
+  bool isVehicles = true;
 
   regenerate() {
     RandomHelper randomHelper = RandomHelper();
